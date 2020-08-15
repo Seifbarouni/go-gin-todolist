@@ -14,5 +14,9 @@ func main(){
 	r.GET("/todo",handlers.RenderHTML)
 	r.POST("/add",handlers.AddItem)
 
+	r.GET("/delete/:id",handlers.DeleteItem)
+	r.GET("/update/:id/:todo",handlers.RenderUpdateHTML)
+	r.POST("/update",handlers.UpdateItem)
+	
 	r.Run()
 }

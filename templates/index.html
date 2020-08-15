@@ -3,92 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <title>ToDo</title>
-    <link
-      rel="stylesheet"
-      href="http://fonts.googleapis.com/css?family=Open+Sans|Merienda:700"
-    />
-    <link
-      rel="stylesheet"
-      href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
-    />
-    <style>
-      * {
-        box-sizing: border-box;
-      }
-
-      main {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        /*border: 1px solid black;*/
-        margin: 10px;
-      }
-      article {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        /*border: 1px solid black;*/
-        min-width: 600px;
-      }
-      section {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        border: 1px solid #2ec371;
-        width: 100%;
-        padding: 7px 12px 7px 10px;
-        margin: 5px;
-        border-radius: 10px;
-      }
-
-      h1 {
-        font-family: "Merienda", cursive;
-        font-size: 53px;
-        color: #2ec371;
-        margin: 10px;
-      }
-
-      h2 {
-        font-family: "Open Sans", sans-serif;
-        font-size: 16px;
-        max-width: 500px;
-      }
-
-      #new-item {
-        color: gray;
-      }
-
-      .fa-minus-circle {
-        color: red;
-      }
-
-      .fa-plus-circle {
-        color: green;
-      }
-    </style>
   </head>
   <body>
-    <main>
-      <article>
-        <h1>TO-DO</h1>
-        <div id="items"></div>
-        <section>
-          <form action="/add" method="post">
-            <input
-              type="text"
-              id="new-item"
-              placeholder="add item"
-              name="todo"
-            />
-          </form>
-        </section>
-        {{range . }}
-        <h3 style="font-weight: bold;">{{.Todostr}}</h3>
-        {{end}}
-      </article>
-    </main>
+    <div>
+      <h2>Welcome to your Todo List!</h2>
+    </div>
+    <div>
+      <form action="/add" method="post">
+        <input type="text" name="todo" />
+        <button type="submit">Add Todo</button>
+      </form>
+    </div>
+    <div>
+      {{range . }}
+      <div>
+        <h3>
+          {{.ID}}. {{.Todostr}} <a href="/delete/{{.ID}}">Done</a>-
+          <a href="/update/{{.ID}}/{{.Todostr}}">Update</a>
+        </h3>
+      </div>
+      {{end}}
+    </div>
   </body>
 </html>
