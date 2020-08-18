@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./views/style.css" />
     <title>ToDo</title>
   </head>
   <body>
@@ -10,16 +11,28 @@
     </div>
     <div>
       <form action="/add" method="post">
-        <input type="text" name="todo" />
-        <button type="submit">Add Todo</button>
+        <input type="text" name="todo" placeholder="Todo" />
+        <button type="submit" class="add">Add Todo</button>
       </form>
     </div>
+
     <div>
       {{range . }}
       <div>
         <h3>
-          {{.ID}}. {{.Todostr}} <a href="/delete/{{.ID}}">Done</a>-
-          <a href="/update/{{.ID}}/{{.Todostr}}">Update</a>
+          {{.ID}}. {{.Todostr}}
+          <button
+            onclick="window.location.href='/delete/{{.ID}}';"
+            class="done"
+          >
+            Done</button
+          >-
+          <button
+            onclick="window.location.href='/update/{{.ID}}/{{.Todostr}}';"
+            class="update"
+          >
+            Update
+          </button>
         </h3>
       </div>
       {{end}}

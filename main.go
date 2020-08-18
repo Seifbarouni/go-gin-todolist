@@ -9,6 +9,7 @@ import (
 func main(){
 	r:=gin.Default()
 	r.LoadHTMLGlob("templates/*.html")
+	r.Static("views","./views")
 
 	r.GET("/",handlers.Index)
 	r.GET("/todo",handlers.RenderHTML)

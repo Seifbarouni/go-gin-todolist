@@ -24,7 +24,6 @@ func AddItem(c *gin.Context){
 		})
 	}
 	
-	
 }
 
 func DeleteItem(c *gin.Context){

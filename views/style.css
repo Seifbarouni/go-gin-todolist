@@ -1,0 +1,32 @@
+body {
+  padding: 10px;
+  margin: 15px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background-color: #eeee;
+}
+input {
+  padding: 7.5px;
+  margin: 15px 0;
+  border: 0;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+  width: 30%;
+}
+.add,
+.update,
+.done {
+  border-radius: 10px;
+  border: 0;
+  width: 70px;
+  height: 32px;
+  color: white;
+}
+.add {
+  background-color: #4caf50;
+}
+.done {
+  background-color: #be2b2b;
+}
+.update {
+  background-color: rgb(230, 230, 25);
+}
